@@ -6,15 +6,12 @@
 /*   By: eriling <eriling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 14:11:27 by eriling           #+#    #+#             */
-/*   Updated: 2020/11/24 17:39:15 by eriling          ###   ########.fr       */
+/*   Updated: 2020/11/25 17:16:13 by eriling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GNL_H
 # define GNL_H
-
-# define FD_S 4096
-# define BUFF_SIZE 42
 
 
 # include <stdlib.h>
