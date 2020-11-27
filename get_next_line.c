@@ -6,12 +6,20 @@
 /*   By: eriling <eriling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 14:09:28 by eriling           #+#    #+#             */
-/*   Updated: 2020/11/27 10:11:19 by eriling          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:01:41 by eriling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h>
+
+void		ft_free_str(char **s)
+{
+	if (s != NULL && *s != NULL)
+	{
+		free(*s);
+		*s = NULL;
+	}
+}
 
 static int	save_line(char **str, char **line)
 {
@@ -19,13 +27,12 @@ static int	save_line(char **str, char **line)
 	char	*tmp;
 
 	l = 0;
-
 	while ((*str)[l] != '\n' && (*str)[l] != '\0')
 		l++;
 	if ((*str)[l] == '\n')
 	{
 		*line = ft_substr(*str, 0, l);
-		tmp = ft_strdup(&((*str)[l + 1])); 
+		tmp = ft_strdup(&((*str)[l + 1]));
 		ft_free_str(str);
 		*str = tmp;
 		if ((**str) == '\0')
@@ -68,9 +75,7 @@ int			get_next_line(const int fd, char **line)
 	{
 		buff[r] = '\0';
 		if (!str[fd])
-		{
 			str[fd] = ft_strdup(buff);
-		}
 		else
 		{
 			tmp = ft_strjoin(str[fd], buff);
@@ -78,9 +83,7 @@ int			get_next_line(const int fd, char **line)
 			str[fd] = tmp;
 		}
 		if (ft_strchr(str[fd], '\n'))
-		{
 			break ;
-		}
 	}
 	return (filter(str, fd, line, r));
 }

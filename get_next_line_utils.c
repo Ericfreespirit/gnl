@@ -6,7 +6,7 @@
 /*   By: eriling <eriling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 09:58:29 by eriling           #+#    #+#             */
-/*   Updated: 2020/11/27 10:07:49 by eriling          ###   ########.fr       */
+/*   Updated: 2020/11/27 10:45:05 by eriling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ss[i] = '\0';
 	return (ss);
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t i;
@@ -85,7 +86,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*ss;
 	size_t	i;
-	unsigned int		len;
+	size_t	len;
 
 	i = 0;
 	ss = (char *)s;
@@ -97,12 +98,4 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	return (NULL);
-}
-void	ft_free_str(char **s)
-{
-	if (s != NULL && *s != NULL)
-	{
-		free(*s);
-		*s = NULL;
-	}
 }
