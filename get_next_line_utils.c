@@ -6,7 +6,7 @@
 /*   By: eriling <eriling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 09:58:29 by eriling           #+#    #+#             */
-/*   Updated: 2020/11/17 11:45:11 by eriling          ###   ########.fr       */
+/*   Updated: 2020/11/27 10:07:49 by eriling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,12 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*ss;
 	size_t	i;
+	unsigned int		len;
 
 	i = 0;
 	ss = (char *)s;
-	while (i <= ft_strlen(ss))
+	len = ft_strlen(ss);
+	while (i <= len)
 	{
 		if (ss[i] == (char)c)
 			return (&ss[i]);
