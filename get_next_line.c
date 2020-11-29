@@ -56,9 +56,7 @@ static int	filter(char **str, int fd, char **line, int r)
 		return (0);
 	}
 	else if (r < 0)
-	{
 		return (-1);
-	}
 	return (save_line(&str[fd], line));
 }
 
